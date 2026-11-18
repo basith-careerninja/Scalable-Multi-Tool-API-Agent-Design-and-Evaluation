@@ -1,0 +1,9 @@
+{
+  "_about": "Fields PayPal requires that the Postman collection does not mark as required, found when the sandbox rejected a call (400 MISSING_REQUIRED_PARAMETER). Each value is what is sent when the user did not set the field. Only values with no meaning of their own belong here: an empty object PayPal fills with its defaults. Details only the user can decide (an item name, a recipient) are asked for instead (agent/ready.py).",
+  "plan.create": {
+    "payment_preferences": {
+      "value": {},
+      "found": "2026-11-18, sandbox: 'Create plan' 400 MISSING_REQUIRED_PARAMETER /payment_preferences; an empty object was accepted (201) and PayPal applied its defaults"
+    }
+  }
+}

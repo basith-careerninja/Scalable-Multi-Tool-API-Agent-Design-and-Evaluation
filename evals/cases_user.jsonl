@@ -1,0 +1,20 @@
+# Your eval cases. One JSON object per line; lines starting with # are ignored.
+# Write requests the way a real user would, then the right outcome. See evals/README.md.
+#
+# Fields:
+#   id        unique, e.g. "u01"
+#   category  task, read, write, chain, new_vs_existing, lookalike, typed_ids,
+#             calculation, multi_action, should_ask, docs or system
+#   message   the user's request
+#   expect    intent: "action", "docs", "system" or "ask" (the right first response is a question)
+#             steps (for action): one entry per separate goal, each with
+#               op     the operation id, e.g. "invoice.send" (python demo.py shows ids)
+#               alt    other acceptable operation ids (optional)
+#               new    ids of things the request creates, e.g. ["invoice_id"] (optional)
+#               ids    ids the user typed, e.g. {"capture_id": "7KY78659SG487110K"} (optional)
+#               calc   true if a total or count is needed, false if not (optional)
+#             plan (optional, single-goal only): the expected calls in order
+#
+# Examples (remove the leading # to use them):
+# {"id": "u01", "category": "write", "message": "Refund 15 dollars on capture 9FV01025HL4947129", "expect": {"intent": "action", "steps": [{"op": "capture.refund", "ids": {"capture_id": "9FV01025HL4947129"}}]}}
+# {"id": "u02", "category": "should_ask", "message": "change the amount", "expect": {"intent": "ask"}}

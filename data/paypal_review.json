@@ -1,0 +1,4502 @@
+{
+ "source": "PayPal APIs",
+ "folders_done": [
+  "Authorization",
+  "Orders",
+  "Payments",
+  "Invoices / Invoices",
+  "Invoices / Templates",
+  "Subscriptions / Catalog Products",
+  "Subscriptions / Plans",
+  "Subscriptions / Subscriptions",
+  "Payouts",
+  "Webhooks",
+  "Shipment Tracking",
+  "Transaction Search",
+  "Currency Exchange",
+  "Disputes",
+  "Onboarding (Limited Release) / Manage Accounts",
+  "Payment Method Tokens / Vault Payment Source - Setup Tokens",
+  "Payment Method Tokens / Vault Payment Source - Payment token",
+  "Payment Links and Buttons"
+ ],
+ "requests": [
+  {
+   "key": "POST /v1/oauth2/token | Generate access_token",
+   "group": "Authorization",
+   "name": "Generate access_token",
+   "method": "POST",
+   "path": "/v1/oauth2/token",
+   "fields": {
+    "resource": {
+     "proposed": "access-token",
+     "current": "token",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "action": {
+     "proposed": "create",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/oauth2/token/terminate | Terminate access_token",
+   "group": "Authorization",
+   "name": "Terminate access_token",
+   "method": "POST",
+   "path": "/v1/oauth2/token/terminate",
+   "fields": {
+    "resource": {
+     "proposed": "access-token",
+     "current": "terminate",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "action": {
+     "proposed": "terminate",
+     "current": "create",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/identity/oauth2/userinfo | User Info",
+   "group": "Authorization",
+   "name": "User Info",
+   "method": "GET",
+   "path": "/v1/identity/oauth2/userinfo",
+   "fields": {
+    "resource": {
+     "proposed": "user",
+     "current": "userinfo",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "action": {
+     "proposed": "show",
+     "current": "list",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/identity/generate-token | Generate client_token",
+   "group": "Authorization",
+   "name": "Generate client_token",
+   "method": "POST",
+   "path": "/v1/identity/generate-token",
+   "fields": {
+    "resource": {
+     "proposed": "client-token",
+     "current": "generate-token",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "action": {
+     "proposed": "create",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/checkout/orders | Create order",
+   "group": "Orders",
+   "name": "Create order",
+   "method": "POST",
+   "path": "/v2/checkout/orders",
+   "fields": {
+    "resource": {
+     "proposed": "order",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "create",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [
+      "authorization_id",
+      "capture_id"
+     ],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "current": [
+      "order_intent"
+     ],
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "risk": {
+     "proposed": "write",
+     "current": "money",
+     "status": "rejected"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/checkout/orders/:order_id/confirm-payment-source | Confirm Payment Source",
+   "group": "Orders",
+   "name": "Confirm Payment Source",
+   "method": "POST",
+   "path": "/v2/checkout/orders/:order_id/confirm-payment-source",
+   "fields": {
+    "resource": {
+     "proposed": "order",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "confirm-payment-source",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "current": "money",
+     "status": "rejected"
+    }
+   }
+  },
+  {
+   "key": "GET /v2/checkout/orders/:order_id | Show order details",
+   "group": "Orders",
+   "name": "Show order details",
+   "method": "GET",
+   "path": "/v2/checkout/orders/:order_id",
+   "fields": {
+    "resource": {
+     "proposed": "order",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "PATCH /v2/checkout/orders/:order_id | Update order",
+   "group": "Orders",
+   "name": "Update order",
+   "method": "PATCH",
+   "path": "/v2/checkout/orders/:order_id",
+   "fields": {
+    "resource": {
+     "proposed": "order",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "update",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "current": "money",
+     "status": "rejected"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/checkout/orders/:order_id/authorize | Authorize payment for order",
+   "group": "Orders",
+   "name": "Authorize payment for order",
+   "method": "POST",
+   "path": "/v2/checkout/orders/:order_id/authorize",
+   "fields": {
+    "resource": {
+     "proposed": "order",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "authorize-payment",
+     "current": "authorize",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "money",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/checkout/orders/:order_id/capture | Capture payment for order",
+   "group": "Orders",
+   "name": "Capture payment for order",
+   "method": "POST",
+   "path": "/v2/checkout/orders/:order_id/capture",
+   "fields": {
+    "resource": {
+     "proposed": "order",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "capture-payment",
+     "current": "capture",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "money",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/checkout/orders/:order_id/confirm-payment-source | Confirm Payment Source - 3DS",
+   "group": "Orders",
+   "name": "Confirm Payment Source - 3DS",
+   "method": "POST",
+   "path": "/v2/checkout/orders/:order_id/confirm-payment-source",
+   "fields": {
+    "resource": {
+     "proposed": "order",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "confirm-payment-source",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": "Confirm Payment Source",
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "current": [
+      "card_verification_method"
+     ],
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "risk": {
+     "proposed": "write",
+     "current": "money",
+     "status": "rejected"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/checkout/orders/:order_id/track | Add tracking information for an order",
+   "group": "Orders",
+   "name": "Add tracking information for an order",
+   "method": "POST",
+   "path": "/v2/checkout/orders/:order_id/track",
+   "fields": {
+    "resource": {
+     "proposed": "order",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "add-tracking-information",
+     "current": "add-tracking",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "current": [
+      "tracking_number"
+     ],
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "PATCH /v2/checkout/orders/:order_id/trackers/:tracking_id | Update tracking information for an order",
+   "group": "Orders",
+   "name": "Update tracking information for an order",
+   "method": "PATCH",
+   "path": "/v2/checkout/orders/:order_id/trackers/:tracking_id",
+   "fields": {
+    "resource": {
+     "proposed": "order",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "update-tracking-information",
+     "current": "update-trackers",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v2/payments/authorizations/:authorization_id | Show details for authorized payment",
+   "group": "Payments",
+   "name": "Show details for authorized payment",
+   "method": "GET",
+   "path": "/v2/payments/authorizations/:authorization_id",
+   "fields": {
+    "resource": {
+     "proposed": "authorization",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/payments/authorizations/:authorization_id/reauthorize | Reauthorize authorized payment",
+   "group": "Payments",
+   "name": "Reauthorize authorized payment",
+   "method": "POST",
+   "path": "/v2/payments/authorizations/:authorization_id/reauthorize",
+   "fields": {
+    "resource": {
+     "proposed": "authorization",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "reauthorize",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "money",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/payments/authorizations/:authorization_id/void | Void authorized payment",
+   "group": "Payments",
+   "name": "Void authorized payment",
+   "method": "POST",
+   "path": "/v2/payments/authorizations/:authorization_id/void",
+   "fields": {
+    "resource": {
+     "proposed": "authorization",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "void",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "money",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/payments/authorizations/:authorization_id/capture | Capture authorized payment",
+   "group": "Payments",
+   "name": "Capture authorized payment",
+   "method": "POST",
+   "path": "/v2/payments/authorizations/:authorization_id/capture",
+   "fields": {
+    "resource": {
+     "proposed": "authorization",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "capture",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [
+      "capture_id"
+     ],
+     "current": [],
+     "status": "rejected"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "money",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v2/payments/captures/:capture_id | Show captured payment details",
+   "group": "Payments",
+   "name": "Show captured payment details",
+   "method": "GET",
+   "path": "/v2/payments/captures/:capture_id",
+   "fields": {
+    "resource": {
+     "proposed": "capture",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/payments/captures/:capture_id/refund | Refund captured payment",
+   "group": "Payments",
+   "name": "Refund captured payment",
+   "method": "POST",
+   "path": "/v2/payments/captures/:capture_id/refund",
+   "fields": {
+    "resource": {
+     "proposed": "capture",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "refund",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [
+      "refund_id"
+     ],
+     "current": [],
+     "status": "rejected"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "money",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v2/payments/refunds/:refund_id | Show refund details",
+   "group": "Payments",
+   "name": "Show refund details",
+   "method": "GET",
+   "path": "/v2/payments/refunds/:refund_id",
+   "fields": {
+    "resource": {
+     "proposed": "refund",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/invoicing/generate-next-invoice-number | Generate invoice number",
+   "group": "Invoices / Invoices",
+   "name": "Generate invoice number",
+   "method": "POST",
+   "path": "/v2/invoicing/generate-next-invoice-number",
+   "fields": {
+    "resource": {
+     "proposed": "invoice-number",
+     "current": "invoice",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "action": {
+     "proposed": "generate-number",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "current": "write",
+     "status": "rejected"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/invoicing/invoices | Create draft invoice",
+   "group": "Invoices / Invoices",
+   "name": "Create draft invoice",
+   "method": "POST",
+   "path": "/v2/invoicing/invoices",
+   "fields": {
+    "resource": {
+     "proposed": "invoice",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "create",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v2/invoicing/invoices/:invoice_id | Show invoice details",
+   "group": "Invoices / Invoices",
+   "name": "Show invoice details",
+   "method": "GET",
+   "path": "/v2/invoicing/invoices/:invoice_id",
+   "fields": {
+    "resource": {
+     "proposed": "invoice",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v2/invoicing/invoices | List invoices",
+   "group": "Invoices / Invoices",
+   "name": "List invoices",
+   "method": "GET",
+   "path": "/v2/invoicing/invoices",
+   "fields": {
+    "resource": {
+     "proposed": "invoice",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "list",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/invoicing/invoices/:invoice_id/generate-qr-code | Generate QR code",
+   "group": "Invoices / Invoices",
+   "name": "Generate QR code",
+   "method": "POST",
+   "path": "/v2/invoicing/invoices/:invoice_id/generate-qr-code",
+   "fields": {
+    "resource": {
+     "proposed": "invoice",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "generate-qr-code",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "PUT /v2/invoicing/invoices/:invoice_id | Fully update invoice",
+   "group": "Invoices / Invoices",
+   "name": "Fully update invoice",
+   "method": "PUT",
+   "path": "/v2/invoicing/invoices/:invoice_id",
+   "fields": {
+    "resource": {
+     "proposed": "invoice",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "replace",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/invoicing/invoices/:invoice_id/send | Send invoice",
+   "group": "Invoices / Invoices",
+   "name": "Send invoice",
+   "method": "POST",
+   "path": "/v2/invoicing/invoices/:invoice_id/send",
+   "fields": {
+    "resource": {
+     "proposed": "invoice",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "send",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "outbound",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/invoicing/invoices/:invoice_id/remind | Send invoice reminder",
+   "group": "Invoices / Invoices",
+   "name": "Send invoice reminder",
+   "method": "POST",
+   "path": "/v2/invoicing/invoices/:invoice_id/remind",
+   "fields": {
+    "resource": {
+     "proposed": "invoice",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "remind",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "outbound",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/invoicing/invoices/:invoice_id/cancel | Cancel sent invoice",
+   "group": "Invoices / Invoices",
+   "name": "Cancel sent invoice",
+   "method": "POST",
+   "path": "/v2/invoicing/invoices/:invoice_id/cancel",
+   "fields": {
+    "resource": {
+     "proposed": "invoice",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "cancel",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "outbound",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "DELETE /v2/invoicing/invoices/:invoice_id | Delete invoice",
+   "group": "Invoices / Invoices",
+   "name": "Delete invoice",
+   "method": "DELETE",
+   "path": "/v2/invoicing/invoices/:invoice_id",
+   "fields": {
+    "resource": {
+     "proposed": "invoice",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "delete",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "destructive",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/invoicing/search-invoices | Search for invoices",
+   "group": "Invoices / Invoices",
+   "name": "Search for invoices",
+   "method": "POST",
+   "path": "/v2/invoicing/search-invoices",
+   "fields": {
+    "resource": {
+     "proposed": "invoice",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "search",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/invoicing/invoices/:invoice_id/payments | Record payment for invoice",
+   "group": "Invoices / Invoices",
+   "name": "Record payment for invoice",
+   "method": "POST",
+   "path": "/v2/invoicing/invoices/:invoice_id/payments",
+   "fields": {
+    "resource": {
+     "proposed": "invoice-payment",
+     "current": "invoice",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "action": {
+     "proposed": "record-payment",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {
+      "invoice_id": "invoice_id"
+     },
+     "current": {},
+     "status": "rejected"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "money",
+     "current": "write",
+     "status": "rejected"
+    }
+   }
+  },
+  {
+   "key": "DELETE /v2/invoicing/invoices/:invoice_id/payments/:transaction_id | Delete external payment",
+   "group": "Invoices / Invoices",
+   "name": "Delete external payment",
+   "method": "DELETE",
+   "path": "/v2/invoicing/invoices/:invoice_id/payments/:transaction_id",
+   "fields": {
+    "resource": {
+     "proposed": "invoice-payment",
+     "current": "invoice",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "action": {
+     "proposed": "delete",
+     "current": "delete-payments",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {
+      "invoice_id": "invoice_id",
+      "transaction_id": "invoice_payment_id"
+     },
+     "current": {},
+     "status": "edited",
+     "final": {
+      "transaction_id": "invoice_payment_id"
+     }
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "destructive",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/invoicing/invoices/:invoice_id/refunds | Record refund for invoice",
+   "group": "Invoices / Invoices",
+   "name": "Record refund for invoice",
+   "method": "POST",
+   "path": "/v2/invoicing/invoices/:invoice_id/refunds",
+   "fields": {
+    "resource": {
+     "proposed": "invoice-refund",
+     "current": "invoice",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "action": {
+     "proposed": "record-refund",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {
+      "invoice_id": "invoice_id"
+     },
+     "current": {},
+     "status": "rejected"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "money",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "DELETE /v2/invoicing/invoices/:invoice_id/refunds/:transaction_id | Delete external refund",
+   "group": "Invoices / Invoices",
+   "name": "Delete external refund",
+   "method": "DELETE",
+   "path": "/v2/invoicing/invoices/:invoice_id/refunds/:transaction_id",
+   "fields": {
+    "resource": {
+     "proposed": "invoice-refund",
+     "current": "invoice",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "action": {
+     "proposed": "delete",
+     "current": "delete-refunds",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {
+      "invoice_id": "invoice_id",
+      "transaction_id": "invoice_refund_id"
+     },
+     "current": {},
+     "status": "edited",
+     "final": {
+      "transaction_id": "invoice_refund_id"
+     }
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "destructive",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v2/invoicing/templates | List templates",
+   "group": "Invoices / Templates",
+   "name": "List templates",
+   "method": "GET",
+   "path": "/v2/invoicing/templates",
+   "fields": {
+    "resource": {
+     "proposed": "template",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "list",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/invoicing/templates | Create template",
+   "group": "Invoices / Templates",
+   "name": "Create template",
+   "method": "POST",
+   "path": "/v2/invoicing/templates",
+   "fields": {
+    "resource": {
+     "proposed": "template",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "create",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v2/invoicing/templates/:template_id | Show template details",
+   "group": "Invoices / Templates",
+   "name": "Show template details",
+   "method": "GET",
+   "path": "/v2/invoicing/templates/:template_id",
+   "fields": {
+    "resource": {
+     "proposed": "template",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "current": {
+      "template_id": "invoice_template_id"
+     },
+     "status": "rejected"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "PUT /v2/invoicing/templates/:template_id | Fully update template",
+   "group": "Invoices / Templates",
+   "name": "Fully update template",
+   "method": "PUT",
+   "path": "/v2/invoicing/templates/:template_id",
+   "fields": {
+    "resource": {
+     "proposed": "template",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "replace",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "current": {
+      "template_id": "invoice_template_id"
+     },
+     "status": "rejected"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "DELETE /v2/invoicing/templates/:template_id | Delete template",
+   "group": "Invoices / Templates",
+   "name": "Delete template",
+   "method": "DELETE",
+   "path": "/v2/invoicing/templates/:template_id",
+   "fields": {
+    "resource": {
+     "proposed": "template",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "delete",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "current": {
+      "template_id": "invoice_template_id"
+     },
+     "status": "rejected"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "destructive",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/catalogs/products | Create product",
+   "group": "Subscriptions / Catalog Products",
+   "name": "Create product",
+   "method": "POST",
+   "path": "/v1/catalogs/products",
+   "fields": {
+    "resource": {
+     "proposed": "product",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "create",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": "Trigger a sample event",
+     "current": null,
+     "status": "rejected"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/catalogs/products | List products",
+   "group": "Subscriptions / Catalog Products",
+   "name": "List products",
+   "method": "GET",
+   "path": "/v1/catalogs/products",
+   "fields": {
+    "resource": {
+     "proposed": "product",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "list",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/catalogs/products/:product_id | Show product details",
+   "group": "Subscriptions / Catalog Products",
+   "name": "Show product details",
+   "method": "GET",
+   "path": "/v1/catalogs/products/:product_id",
+   "fields": {
+    "resource": {
+     "proposed": "product",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "PATCH /v1/catalogs/products/:product_id | Update product",
+   "group": "Subscriptions / Catalog Products",
+   "name": "Update product",
+   "method": "PATCH",
+   "path": "/v1/catalogs/products/:product_id",
+   "fields": {
+    "resource": {
+     "proposed": "product",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "update",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/billing/plans | Create plan",
+   "group": "Subscriptions / Plans",
+   "name": "Create plan",
+   "method": "POST",
+   "path": "/v1/billing/plans",
+   "fields": {
+    "resource": {
+     "proposed": "plan",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "create",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/billing/plans | List plans",
+   "group": "Subscriptions / Plans",
+   "name": "List plans",
+   "method": "GET",
+   "path": "/v1/billing/plans",
+   "fields": {
+    "resource": {
+     "proposed": "plan",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "list",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/billing/plans/:billing_plan_id | Show plan details",
+   "group": "Subscriptions / Plans",
+   "name": "Show plan details",
+   "method": "GET",
+   "path": "/v1/billing/plans/:billing_plan_id",
+   "fields": {
+    "resource": {
+     "proposed": "plan",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "PATCH /v1/billing/plans/:billing_plan_id | Update plan",
+   "group": "Subscriptions / Plans",
+   "name": "Update plan",
+   "method": "PATCH",
+   "path": "/v1/billing/plans/:billing_plan_id",
+   "fields": {
+    "resource": {
+     "proposed": "plan",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "update",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/billing/plans/:billing_plan_id/deactivate | Deactivate plan",
+   "group": "Subscriptions / Plans",
+   "name": "Deactivate plan",
+   "method": "POST",
+   "path": "/v1/billing/plans/:billing_plan_id/deactivate",
+   "fields": {
+    "resource": {
+     "proposed": "plan",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "deactivate",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/billing/plans/:billing_plan_id/activate | Activate plan",
+   "group": "Subscriptions / Plans",
+   "name": "Activate plan",
+   "method": "POST",
+   "path": "/v1/billing/plans/:billing_plan_id/activate",
+   "fields": {
+    "resource": {
+     "proposed": "plan",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "activate",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/billing/plans/:billing_plan_id/update-pricing-schemes | Update pricing",
+   "group": "Subscriptions / Plans",
+   "name": "Update pricing",
+   "method": "POST",
+   "path": "/v1/billing/plans/:billing_plan_id/update-pricing-schemes",
+   "fields": {
+    "resource": {
+     "proposed": "plan",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "update-pricing-schemes",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/billing/subscriptions | Create subscription",
+   "group": "Subscriptions / Subscriptions",
+   "name": "Create subscription",
+   "method": "POST",
+   "path": "/v1/billing/subscriptions",
+   "fields": {
+    "resource": {
+     "proposed": "subscription",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "create",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [
+      "tomorrow"
+     ],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/billing/subscriptions/:subscription_id | Show subscription details",
+   "group": "Subscriptions / Subscriptions",
+   "name": "Show subscription details",
+   "method": "GET",
+   "path": "/v1/billing/subscriptions/:subscription_id",
+   "fields": {
+    "resource": {
+     "proposed": "subscription",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "PATCH /v1/billing/subscriptions/:subscription_id | Update subscription",
+   "group": "Subscriptions / Subscriptions",
+   "name": "Update subscription",
+   "method": "PATCH",
+   "path": "/v1/billing/subscriptions/:subscription_id",
+   "fields": {
+    "resource": {
+     "proposed": "subscription",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "update",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/billing/subscriptions/:subscription_id/revise | Revise plan or quantity of subscription",
+   "group": "Subscriptions / Subscriptions",
+   "name": "Revise plan or quantity of subscription",
+   "method": "POST",
+   "path": "/v1/billing/subscriptions/:subscription_id/revise",
+   "fields": {
+    "resource": {
+     "proposed": "subscription",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "revise",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/billing/subscriptions/:subscription_id/suspend | Suspend subscription",
+   "group": "Subscriptions / Subscriptions",
+   "name": "Suspend subscription",
+   "method": "POST",
+   "path": "/v1/billing/subscriptions/:subscription_id/suspend",
+   "fields": {
+    "resource": {
+     "proposed": "subscription",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "suspend",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/billing/subscriptions/:subscription_id/activate | Activate subscription",
+   "group": "Subscriptions / Subscriptions",
+   "name": "Activate subscription",
+   "method": "POST",
+   "path": "/v1/billing/subscriptions/:subscription_id/activate",
+   "fields": {
+    "resource": {
+     "proposed": "subscription",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "activate",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/billing/subscriptions/:subscription_id/cancel | Cancel subscription",
+   "group": "Subscriptions / Subscriptions",
+   "name": "Cancel subscription",
+   "method": "POST",
+   "path": "/v1/billing/subscriptions/:subscription_id/cancel",
+   "fields": {
+    "resource": {
+     "proposed": "subscription",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "cancel",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "current": "outbound",
+     "status": "rejected"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/billing/subscriptions/:subscription_id/capture | Capture authorized payment on subscription",
+   "group": "Subscriptions / Subscriptions",
+   "name": "Capture authorized payment on subscription",
+   "method": "POST",
+   "path": "/v1/billing/subscriptions/:subscription_id/capture",
+   "fields": {
+    "resource": {
+     "proposed": "subscription",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "capture",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "money",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/billing/subscriptions/:subscription_id/transactions | List transactions for subscription",
+   "group": "Subscriptions / Subscriptions",
+   "name": "List transactions for subscription",
+   "method": "GET",
+   "path": "/v1/billing/subscriptions/:subscription_id/transactions",
+   "fields": {
+    "resource": {
+     "proposed": "subscription",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "list-transactions",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/payments/payouts | Create batch payout",
+   "group": "Payouts",
+   "name": "Create batch payout",
+   "method": "POST",
+   "path": "/v1/payments/payouts",
+   "fields": {
+    "resource": {
+     "proposed": "payout-batch",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "create",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "money",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/payments/payouts/:payout_batch_id | Show payout batch details",
+   "group": "Payouts",
+   "name": "Show payout batch details",
+   "method": "GET",
+   "path": "/v1/payments/payouts/:payout_batch_id",
+   "fields": {
+    "resource": {
+     "proposed": "payout-batch",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [
+      "payout_item_id"
+     ],
+     "current": [],
+     "status": "rejected"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/payments/payouts-item/:payout_item_id | Show payout item details",
+   "group": "Payouts",
+   "name": "Show payout item details",
+   "method": "GET",
+   "path": "/v1/payments/payouts-item/:payout_item_id",
+   "fields": {
+    "resource": {
+     "proposed": "payout-item",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/payments/payouts-item/:payout_item_id/cancel | Cancel unclaimed payout item",
+   "group": "Payouts",
+   "name": "Cancel unclaimed payout item",
+   "method": "POST",
+   "path": "/v1/payments/payouts-item/:payout_item_id/cancel",
+   "fields": {
+    "resource": {
+     "proposed": "payout-item",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "cancel",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "money",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/notifications/webhooks-event-types | List available events",
+   "group": "Webhooks",
+   "name": "List available events",
+   "method": "GET",
+   "path": "/v1/notifications/webhooks-event-types",
+   "fields": {
+    "resource": {
+     "proposed": "webhook-event-type",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "list",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/notifications/webhooks | Create webhook",
+   "group": "Webhooks",
+   "name": "Create webhook",
+   "method": "POST",
+   "path": "/v1/notifications/webhooks",
+   "fields": {
+    "resource": {
+     "proposed": "webhook",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "create",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "current": [
+      "webhook_site_token",
+      "webhook_url"
+     ],
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/notifications/webhooks | List webhooks",
+   "group": "Webhooks",
+   "name": "List webhooks",
+   "method": "GET",
+   "path": "/v1/notifications/webhooks",
+   "fields": {
+    "resource": {
+     "proposed": "webhook",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "list",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/notifications/webhooks/:webhook_id | Show webhook details",
+   "group": "Webhooks",
+   "name": "Show webhook details",
+   "method": "GET",
+   "path": "/v1/notifications/webhooks/:webhook_id",
+   "fields": {
+    "resource": {
+     "proposed": "webhook",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/notifications/webhooks-events | List event notifications",
+   "group": "Webhooks",
+   "name": "List event notifications",
+   "method": "GET",
+   "path": "/v1/notifications/webhooks-events",
+   "fields": {
+    "resource": {
+     "proposed": "webhook-event",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "list",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/notifications/webhooks/:webhook_id/event-types | List event subscriptions for webhook",
+   "group": "Webhooks",
+   "name": "List event subscriptions for webhook",
+   "method": "GET",
+   "path": "/v1/notifications/webhooks/:webhook_id/event-types",
+   "fields": {
+    "resource": {
+     "proposed": "webhook",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "list-event-types",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/notifications/webhooks-events/:event_id | Show event notification details",
+   "group": "Webhooks",
+   "name": "Show event notification details",
+   "method": "GET",
+   "path": "/v1/notifications/webhooks-events/:event_id",
+   "fields": {
+    "resource": {
+     "proposed": "webhook-event",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/catalogs/products | Trigger a sample event",
+   "group": "Webhooks",
+   "name": "Trigger a sample event",
+   "method": "POST",
+   "path": "/v1/catalogs/products",
+   "fields": {
+    "resource": {
+     "proposed": "product",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "create",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": "Create product",
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/notifications/verify-webhook-signature | Verify webhook signature",
+   "group": "Webhooks",
+   "name": "Verify webhook signature",
+   "method": "POST",
+   "path": "/v1/notifications/verify-webhook-signature",
+   "fields": {
+    "resource": {
+     "proposed": "webhook-signature",
+     "current": "webhook",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "action": {
+     "proposed": "verify",
+     "current": "verify-signature",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "current": "write",
+     "status": "accepted"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/notifications/webhooks-events/:event_id/resend | Resend event notification",
+   "group": "Webhooks",
+   "name": "Resend event notification",
+   "method": "POST",
+   "path": "/v1/notifications/webhooks-events/:event_id/resend",
+   "fields": {
+    "resource": {
+     "proposed": "webhook-event",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "resend",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "outbound",
+     "current": "write",
+     "status": "accepted"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/notifications/simulate-event | Simulate webhook event",
+   "group": "Webhooks",
+   "name": "Simulate webhook event",
+   "method": "POST",
+   "path": "/v1/notifications/simulate-event",
+   "fields": {
+    "resource": {
+     "proposed": "webhook-event",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "simulate",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "current": [
+      "webhook_url"
+     ],
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "risk": {
+     "proposed": "outbound",
+     "current": "write",
+     "status": "accepted"
+    }
+   }
+  },
+  {
+   "key": "PATCH /v1/notifications/webhooks/:webhook_id | Update webhook",
+   "group": "Webhooks",
+   "name": "Update webhook",
+   "method": "PATCH",
+   "path": "/v1/notifications/webhooks/:webhook_id",
+   "fields": {
+    "resource": {
+     "proposed": "webhook",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "update",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "DELETE /v1/notifications/webhooks/:webhook_id | Delete webhook",
+   "group": "Webhooks",
+   "name": "Delete webhook",
+   "method": "DELETE",
+   "path": "/v1/notifications/webhooks/:webhook_id",
+   "fields": {
+    "resource": {
+     "proposed": "webhook",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "delete",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "destructive",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/shipping/trackers-batch | Add tracking information for multiple PayPal transactions",
+   "group": "Shipment Tracking",
+   "name": "Add tracking information for multiple PayPal transactions",
+   "method": "POST",
+   "path": "/v1/shipping/trackers-batch",
+   "fields": {
+    "resource": {
+     "proposed": "tracker",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "create-batch",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [
+      "todays_date"
+     ],
+     "current": [
+      "todays_date",
+      "tracking_number"
+     ],
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "risk": {
+     "proposed": "outbound",
+     "current": "write",
+     "status": "accepted"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/shipping/trackers/:tracking_id | Show tracking information",
+   "group": "Shipment Tracking",
+   "name": "Show tracking information",
+   "method": "GET",
+   "path": "/v1/shipping/trackers/:tracking_id",
+   "fields": {
+    "resource": {
+     "proposed": "tracker",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "PUT /v1/shipping/trackers/:tracking_id | Update or cancel tracking information for PayPal transaction",
+   "group": "Shipment Tracking",
+   "name": "Update or cancel tracking information for PayPal transaction",
+   "method": "PUT",
+   "path": "/v1/shipping/trackers/:tracking_id",
+   "fields": {
+    "resource": {
+     "proposed": "tracker",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "update",
+     "current": "replace",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [
+      "todays_date"
+     ],
+     "current": [
+      "tracking_number"
+     ],
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "risk": {
+     "proposed": "outbound",
+     "current": "write",
+     "status": "accepted"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/reporting/transactions | List transactions",
+   "group": "Transaction Search",
+   "name": "List transactions",
+   "method": "GET",
+   "path": "/v1/reporting/transactions",
+   "fields": {
+    "resource": {
+     "proposed": "transaction",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "list",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/reporting/balances | List all balances",
+   "group": "Transaction Search",
+   "name": "List all balances",
+   "method": "GET",
+   "path": "/v1/reporting/balances",
+   "fields": {
+    "resource": {
+     "proposed": "balance",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "list",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v2/pricing/quote-exchange-rates | Create currency exchange quote",
+   "group": "Currency Exchange",
+   "name": "Create currency exchange quote",
+   "method": "POST",
+   "path": "/v2/pricing/quote-exchange-rates",
+   "fields": {
+    "resource": {
+     "proposed": "exchange-quote",
+     "current": "quote-exchange-rate",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "action": {
+     "proposed": "create",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v2/pricing/quote-exchange-rates/{{fx_id}} | Get currency exchange quote",
+   "group": "Currency Exchange",
+   "name": "Get currency exchange quote",
+   "method": "GET",
+   "path": "/v2/pricing/quote-exchange-rates/{{fx_id}}",
+   "fields": {
+    "resource": {
+     "proposed": "exchange-quote",
+     "current": "quote-exchange-rate",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/customer/disputes | List disputes",
+   "group": "Disputes",
+   "name": "List disputes",
+   "method": "GET",
+   "path": "/v1/customer/disputes",
+   "fields": {
+    "resource": {
+     "proposed": "dispute",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "list",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/customer/disputes/:dispute_id | Show dispute details",
+   "group": "Disputes",
+   "name": "Show dispute details",
+   "method": "GET",
+   "path": "/v1/customer/disputes/:dispute_id",
+   "fields": {
+    "resource": {
+     "proposed": "dispute",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/customer/disputes/:dispute_id/accept-claim | Accept claim",
+   "group": "Disputes",
+   "name": "Accept claim",
+   "method": "POST",
+   "path": "/v1/customer/disputes/:dispute_id/accept-claim",
+   "fields": {
+    "resource": {
+     "proposed": "dispute",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "accept-claim",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "money",
+     "current": "outbound",
+     "status": "accepted"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/customer/disputes/:dispute_id/appeal | Appeal dispute",
+   "group": "Disputes",
+   "name": "Appeal dispute",
+   "method": "POST",
+   "path": "/v1/customer/disputes/:dispute_id/appeal",
+   "fields": {
+    "resource": {
+     "proposed": "dispute",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "appeal",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "current": "outbound",
+     "status": "rejected"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/customer/disputes/:dispute_id/adjudicate | Settle dispute",
+   "group": "Disputes",
+   "name": "Settle dispute",
+   "method": "POST",
+   "path": "/v1/customer/disputes/:dispute_id/adjudicate",
+   "fields": {
+    "resource": {
+     "proposed": "dispute",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "adjudicate",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "money",
+     "current": "write",
+     "status": "accepted"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/customer/disputes/:dispute_id/require-evidence | Update dispute status",
+   "group": "Disputes",
+   "name": "Update dispute status",
+   "method": "POST",
+   "path": "/v1/customer/disputes/:dispute_id/require-evidence",
+   "fields": {
+    "resource": {
+     "proposed": "dispute",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "require-evidence",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/customer/disputes/:dispute_id/make-offer | Make offer to resolve dispute",
+   "group": "Disputes",
+   "name": "Make offer to resolve dispute",
+   "method": "POST",
+   "path": "/v1/customer/disputes/:dispute_id/make-offer",
+   "fields": {
+    "resource": {
+     "proposed": "dispute",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "make-offer",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "current": "outbound",
+     "status": "rejected"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/customer/disputes/:dispute_id/provide-evidence | Provide evidence",
+   "group": "Disputes",
+   "name": "Provide evidence",
+   "method": "POST",
+   "path": "/v1/customer/disputes/:dispute_id/provide-evidence",
+   "fields": {
+    "resource": {
+     "proposed": "dispute",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "provide-evidence",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/customer/disputes/:dispute_id/acknowledge-return-item | Acknowledge returned item",
+   "group": "Disputes",
+   "name": "Acknowledge returned item",
+   "method": "POST",
+   "path": "/v1/customer/disputes/:dispute_id/acknowledge-return-item",
+   "fields": {
+    "resource": {
+     "proposed": "dispute",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "acknowledge-return-item",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/customer/disputes/:dispute_id/provide-supporting-info | Provide supporting information for dispute",
+   "group": "Disputes",
+   "name": "Provide supporting information for dispute",
+   "method": "POST",
+   "path": "/v1/customer/disputes/:dispute_id/provide-supporting-info",
+   "fields": {
+    "resource": {
+     "proposed": "dispute",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "provide-supporting-info",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/customer/disputes/:dispute_id/escalate | Escalate dispute to claim",
+   "group": "Disputes",
+   "name": "Escalate dispute to claim",
+   "method": "POST",
+   "path": "/v1/customer/disputes/:dispute_id/escalate",
+   "fields": {
+    "resource": {
+     "proposed": "dispute",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "escalate",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "current": "outbound",
+     "status": "rejected"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/customer/disputes/:dispute_id/accept-offer | Accept offer to resolve dispute",
+   "group": "Disputes",
+   "name": "Accept offer to resolve dispute",
+   "method": "POST",
+   "path": "/v1/customer/disputes/:dispute_id/accept-offer",
+   "fields": {
+    "resource": {
+     "proposed": "dispute",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "accept-offer",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "money",
+     "current": "outbound",
+     "status": "accepted"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/customer/disputes/:dispute_id/send-message | Send message about dispute to other party",
+   "group": "Disputes",
+   "name": "Send message about dispute to other party",
+   "method": "POST",
+   "path": "/v1/customer/disputes/:dispute_id/send-message",
+   "fields": {
+    "resource": {
+     "proposed": "dispute",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "send-message",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "outbound",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/customer/disputes/:dispute_id/deny-offer | Deny offer to resolve dispute",
+   "group": "Disputes",
+   "name": "Deny offer to resolve dispute",
+   "method": "POST",
+   "path": "/v1/customer/disputes/:dispute_id/deny-offer",
+   "fields": {
+    "resource": {
+     "proposed": "dispute",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "deny-offer",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "current": "outbound",
+     "status": "rejected"
+    }
+   }
+  },
+  {
+   "key": "PATCH /v1/customer/disputes/:dispute_id | Partially update dispute",
+   "group": "Disputes",
+   "name": "Partially update dispute",
+   "method": "PATCH",
+   "path": "/v1/customer/disputes/:dispute_id",
+   "fields": {
+    "resource": {
+     "proposed": "dispute",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "update",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v3/customer/managed-accounts | Create managed account",
+   "group": "Onboarding (Limited Release) / Manage Accounts",
+   "name": "Create managed account",
+   "method": "POST",
+   "path": "/v3/customer/managed-accounts",
+   "fields": {
+    "resource": {
+     "proposed": "managed-account",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "create",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "current": [
+      "managed_path_organization"
+     ],
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v3/customer/managed-accounts | Search managed account through external id",
+   "group": "Onboarding (Limited Release) / Manage Accounts",
+   "name": "Search managed account through external id",
+   "method": "GET",
+   "path": "/v3/customer/managed-accounts",
+   "fields": {
+    "resource": {
+     "proposed": "managed-account",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "list",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v3/customer/managed-accounts/:id | Search managed account by Seller Id",
+   "group": "Onboarding (Limited Release) / Manage Accounts",
+   "name": "Search managed account by Seller Id",
+   "method": "GET",
+   "path": "/v3/customer/managed-accounts/:id",
+   "fields": {
+    "resource": {
+     "proposed": "managed-account",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {
+      "id": "managed_path_account_id"
+     },
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "PATCH /v3/customer/managed-accounts/:id | Partially updates information for a managed account",
+   "group": "Onboarding (Limited Release) / Manage Accounts",
+   "name": "Partially updates information for a managed account",
+   "method": "PATCH",
+   "path": "/v3/customer/managed-accounts/:id",
+   "fields": {
+    "resource": {
+     "proposed": "managed-account",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "update",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {
+      "id": "managed_path_account_id"
+     },
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v3/customer/managed-accounts/:id/wallet-domains | Shows collection of registered wallet domains",
+   "group": "Onboarding (Limited Release) / Manage Accounts",
+   "name": "Shows collection of registered wallet domains",
+   "method": "GET",
+   "path": "/v3/customer/managed-accounts/:id/wallet-domains",
+   "fields": {
+    "resource": {
+     "proposed": "wallet-domain",
+     "current": "managed-account",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "action": {
+     "proposed": "list",
+     "current": "list-wallet-domains",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {
+      "id": "managed_path_account_id"
+     },
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/customer/supporting-documents/:token/upload | Upload document by verification token",
+   "group": "Onboarding (Limited Release) / Manage Accounts",
+   "name": "Upload document by verification token",
+   "method": "POST",
+   "path": "/v1/customer/supporting-documents/:token/upload",
+   "fields": {
+    "resource": {
+     "proposed": "supporting-document",
+     "current": "managed-account",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "action": {
+     "proposed": "upload",
+     "current": "upload-document",
+     "status": "rejected",
+     "note": "automatic: keeps the current value"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v3/vault/setup-tokens | Create a setup token",
+   "group": "Payment Method Tokens / Vault Payment Source - Setup Tokens",
+   "name": "Create a setup token",
+   "method": "POST",
+   "path": "/v3/vault/setup-tokens",
+   "fields": {
+    "resource": {
+     "proposed": "setup-token",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "create",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [
+      "card_number"
+     ],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v3/vault/setup-tokens/:setup_token_id | Retrieve a setup token",
+   "group": "Payment Method Tokens / Vault Payment Source - Setup Tokens",
+   "name": "Retrieve a setup token",
+   "method": "GET",
+   "path": "/v3/vault/setup-tokens/:setup_token_id",
+   "fields": {
+    "resource": {
+     "proposed": "setup-token",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v3/vault/payment-tokens | Create payment token",
+   "group": "Payment Method Tokens / Vault Payment Source - Payment token",
+   "name": "Create payment token",
+   "method": "POST",
+   "path": "/v3/vault/payment-tokens",
+   "fields": {
+    "resource": {
+     "proposed": "payment-token",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "create",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v3/vault/payment-tokens/:payment_token_id | Retrieve a payment token",
+   "group": "Payment Method Tokens / Vault Payment Source - Payment token",
+   "name": "Retrieve a payment token",
+   "method": "GET",
+   "path": "/v3/vault/payment-tokens/:payment_token_id",
+   "fields": {
+    "resource": {
+     "proposed": "payment-token",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "DELETE /v3/vault/payment-tokens/:payment_token_id | Delete payment token",
+   "group": "Payment Method Tokens / Vault Payment Source - Payment token",
+   "name": "Delete payment token",
+   "method": "DELETE",
+   "path": "/v3/vault/payment-tokens/:payment_token_id",
+   "fields": {
+    "resource": {
+     "proposed": "payment-token",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "delete",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "destructive",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v3/vault/payment-tokens | List all payment tokens for customer",
+   "group": "Payment Method Tokens / Vault Payment Source - Payment token",
+   "name": "List all payment tokens for customer",
+   "method": "GET",
+   "path": "/v3/vault/payment-tokens",
+   "fields": {
+    "resource": {
+     "proposed": "payment-token",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "list",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "POST /v1/checkout/payment-resources | Creates a payment resource for a single-item purchase",
+   "group": "Payment Links and Buttons",
+   "name": "Creates a payment resource for a single-item purchase",
+   "method": "POST",
+   "path": "/v1/checkout/payment-resources",
+   "fields": {
+    "resource": {
+     "proposed": "payment-resource",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "create",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/checkout/payment-resources | List payment resources",
+   "group": "Payment Links and Buttons",
+   "name": "List payment resources",
+   "method": "GET",
+   "path": "/v1/checkout/payment-resources",
+   "fields": {
+    "resource": {
+     "proposed": "payment-resource",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "list",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "GET /v1/checkout/payment-resources/:payment_resource_id | Retrieve a payment resource",
+   "group": "Payment Links and Buttons",
+   "name": "Retrieve a payment resource",
+   "method": "GET",
+   "path": "/v1/checkout/payment-resources/:payment_resource_id",
+   "fields": {
+    "resource": {
+     "proposed": "payment-resource",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "show",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "read",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "PUT /v1/checkout/payment-resources/:payment_resource_id | Replace a payment resource",
+   "group": "Payment Links and Buttons",
+   "name": "Replace a payment resource",
+   "method": "PUT",
+   "path": "/v1/checkout/payment-resources/:payment_resource_id",
+   "fields": {
+    "resource": {
+     "proposed": "payment-resource",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "replace",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "write",
+     "status": "agreed"
+    }
+   }
+  },
+  {
+   "key": "DELETE /v1/checkout/payment-resources/:payment_resource_id | Delete a payment resource",
+   "group": "Payment Links and Buttons",
+   "name": "Delete a payment resource",
+   "method": "DELETE",
+   "path": "/v1/checkout/payment-resources/:payment_resource_id",
+   "fields": {
+    "resource": {
+     "proposed": "payment-resource",
+     "status": "agreed"
+    },
+    "action": {
+     "proposed": "delete",
+     "status": "agreed"
+    },
+    "hidden_duplicate_of": {
+     "proposed": null,
+     "status": "agreed"
+    },
+    "aliases": {
+     "proposed": {},
+     "status": "agreed"
+    },
+    "conditional_produces": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "ignore_vars": {
+     "proposed": [],
+     "status": "agreed"
+    },
+    "risk": {
+     "proposed": "destructive",
+     "status": "agreed"
+    }
+   }
+  }
+ ],
+ "summary": {
+  "agreement": {
+   "resource": {
+    "agreed": 102,
+    "total": 116
+   },
+   "action": {
+    "agreed": 104,
+    "total": 116
+   },
+   "hidden_duplicate_of": {
+    "agreed": 115,
+    "total": 116
+   },
+   "aliases": {
+    "agreed": 109,
+    "total": 116
+   },
+   "conditional_produces": {
+    "agreed": 113,
+    "total": 116
+   },
+   "ignore_vars": {
+    "agreed": 108,
+    "total": 116
+   },
+   "names (resource and action)": {
+    "agreed": 97,
+    "total": 116
+   },
+   "risk": {
+    "agreed": 93,
+    "total": 112
+   }
+  }
+ },
+ "generated_by": {
+  "model": "gpt-5-mini",
+  "at": "2026-11-17T18:57:11+00:00"
+ }
+}

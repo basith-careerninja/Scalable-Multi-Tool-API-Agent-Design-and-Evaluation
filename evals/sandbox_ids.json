@@ -1,0 +1,11 @@
+{
+ "created_at": "2026-11-17T18:38:34+00:00",
+ "invoicer_email": null,
+ "invoicer_note": "Not readable: userinfo needs 'Log in with PayPal' with the email scope, and PayPal leaves the invoicer empty on drafts created without one. Drafts are still created under this sandbox account.",
+ "recipient_email": "eval-recipient@example.com",
+ "product_id": "PROD-4W9855688T659764M",
+ "billing_plan_id": "P-4S907573GX778034LNL6J6JA",
+ "invoice_number": "0002",
+ "invoice_id": "INV2-V9W3-C8K5-U53B-CX6E",
+ "invoice_template_id": "TEMP-9XV68955GF599934M"
+}

@@ -1,0 +1,25 @@
+.env
+# The Postman export holds client_id / client_secret values. Keep it local.
+data/*.postman_collection.json
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+*.sqlite
+*.db
+.idea/
+.vscode/
+*.sqlite-shm
+*.sqlite-wal
+tests/
+scripts/
+knowledge/
+
+# Public OpenAPI specs for the scaling eval (large; fetched by scripts/fetch_specs.py)
+data/specs/
+
+# Local working notes, eval run outputs and editor state
+docs/PROJECT_CONTEXT.md
+evals/results/
+.cursor/
